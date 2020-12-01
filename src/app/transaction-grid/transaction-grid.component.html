@@ -1,0 +1,23 @@
+<dx-data-grid 
+  #gridInstance
+    id="gridContainer"
+    [dataSource]="dataSource"
+    [allowColumnReordering]="true"
+    [showBorders]="true"
+    (onEditorPreparing)="EditorPreparing($event)"
+    >    
+    <dxo-editing 
+         mode="cell"
+         [allowUpdating]="true"
+         [allowDeleting]="true">
+    </dxo-editing>
+
+    <dxi-column  dataField="Product"  [width]="130"></dxi-column>
+    <dxi-column  dataField="Time" format="HH:mm" [width]="130"></dxi-column>
+    <dxi-column  dataField="Dates" format = "yyyy/MM/dd" [width]="130"></dxi-column>
+    
+</dx-data-grid>
+
+<button (click)="AddRow(gridInstance)">
+  AddRow
+</button>
